@@ -95,16 +95,6 @@ function OptinPage({
                         </motion.p>
                     )}
                 </motion.form>
-
-                <motion.p
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                    className="text-lg text-gray-600 leading-relaxed"
-                >
-                    <strong>BONUS:</strong> Get the 'Top 10 Guitar Chords for Beginners' PDF — loved by 10,000+
-                    students.
-                </motion.p>
             </div>
         </motion.div>
     )
