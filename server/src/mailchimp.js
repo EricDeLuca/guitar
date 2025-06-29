@@ -88,7 +88,7 @@ export const optInUser = async (req, res) => {
         res.status(500).json({
             success: false,
             message: "Failed to subscribe to newsletter. Please try again later.",
-            error: error.message
+            error
         });
     }
 }
