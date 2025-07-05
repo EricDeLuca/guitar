@@ -10,7 +10,7 @@ export const testimonials = [
         quote:
             "The step-by-step approach made learning guitar so much easier. I finally understand music theory and can improvise confidently.",
         name: "Mike R.",
-        title: "Lead Guitarist, The Midnight Blues",
+        title: "Lead Guitarist",
         imgUrl: "/testimonials/boy-2.jpeg"
     },
     {
