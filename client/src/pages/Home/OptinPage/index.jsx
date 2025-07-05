@@ -1,14 +1,6 @@
 import { motion } from 'framer-motion'
 
-function OptinPage({
-    fullName,
-    setFullName,
-    email,
-    setEmail,
-    isLoading,
-    error,
-    handleSubmit
-}) {
+function OptinPage() {
     return (
         <motion.div
             key="optin"
@@ -30,7 +22,7 @@ function OptinPage({
                 />
             </div>
 
-            {/* Right Side - Form */}
+            {/* Right Side - Content */}
             <div className="flex-1 max-w-lg text-center md:text-left">
                 <motion.h1
                     initial={{ opacity: 0, x: 20 }}
@@ -41,69 +33,22 @@ function OptinPage({
                     From <span className="text-c-maroon">Frustration to Flow</span>, A Guitar Book That Fixes Mistakes and Builds Strumming Confidence
                 </motion.h1>
 
-                <motion.form
+                <motion.a
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
-                    onSubmit={handleSubmit}
-                    className="space-y-3 mb-4"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href="https://rapidgrowtheasy.com/wp-content/uploads/2025/06/GT-Ebook-UltimateBeginnerGuide.pdf.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block w-full px-6 py-3 font-semibold rounded-lg transition-colors duration-200 shadow-lg uppercase tracking-wide text-base bg-c-yellow hover:bg-c-yellow/90 text-gray-800 cursor-pointer text-center"
                 >
-                    {/* Full Name Input */}
-                    <input
-                        type="text"
-                        value={fullName}
-                        onChange={(e) => setFullName(e.target.value)}
-                        placeholder="Enter your full name"
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-c-yellow text-gray-900 outline-none"
-                        required
-                        disabled={isLoading}
-                    />
-
-                    {/* Email Input */}
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter your email address"
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-c-yellow text-gray-900 outline-none"
-                        required
-                        disabled={isLoading}
-                    />
-
-                    {/* Submit Button */}
-                    <motion.button
-                        whileHover={{ scale: isLoading ? 1 : 1.05 }}
-                        whileTap={{ scale: isLoading ? 1 : 0.95 }}
-                        type="submit"
-                        disabled={isLoading}
-                        className={`w-full px-6 py-3 font-semibold rounded-lg transition-colors duration-200 shadow-lg uppercase tracking-wide text-base ${isLoading
-                            ? 'bg-gray-400 cursor-not-allowed text-gray-600'
-                            : 'bg-c-yellow hover:bg-c-yellow/90 text-gray-800 cursor-pointer'
-                            }`}
-                    >
-                        {isLoading ? 'Sending...' : 'Send Me PDF'}
-                    </motion.button>
-
-                    {/* Error Message */}
-                    {error && (
-                        <motion.p
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="text-red-600 text-sm mt-2"
-                        >
-                            {error}
-                        </motion.p>
-                    )}
-                </motion.form>
+                    Claim Your E-book Now
+                </motion.a>
             </div>
         </motion.div>
     )
 }
 
 export default OptinPage
-
-
-
-
-
-
